@@ -109,16 +109,11 @@ function holdCard() {
     <img src="${image[dSecondCard]}">`;
     document.getElementById("d-sum").textContent = "Sum: " + dSum;
     while (sum >= dSum) {
-        if (dSum <= 17) {
             let thirdCard = randomNum(1, 11);
             // let thirdCard = 9;
             dSum += thirdCard;
             dImg.innerHTML += `<img src="${image[thirdCard]}">`;
             document.getElementById("d-sum").textContent = "Sum: " + dSum;
-        }
-        else{
-            dSum +=0;
-        }
     }
     if (sum > dSum || dSum > 21) {
         message = "You Won !!!"
