@@ -16,10 +16,6 @@ let message = '';
 let dSum = 0;
 const image = ["img/back.jpg","img/A.png","img/2.png","img/3.png","img/4.png","img/5.png","img/6.png","img/7.png","img/8.png","img/9.png","img/10.png","img/J.png","img/Q.png","img/K.png"];
 
-// start.classList.remove("inactive");
-// add.classList.add("inactive");
-// hold.classList.add("inactive");
-
 
 
 function startGame() {
@@ -33,13 +29,11 @@ function startGame() {
     // dFirstCard = 5;
     // dSecondCard = 5;
     dSum = dFirstCard + dSecondCard;
-    document.getElementById("c-cards").textContent = "Cards: " + firstCard + " " + secondCard;
     cImg.innerHTML = `<img src="${image[firstCard]}">
     <img src="${image[secondCard]}">`;
     document.getElementById("c-sum").textContent = "Sum: " + sum;
     if (sum <= 20) {
         message = 'want more?'
-        document.getElementById("d-cards").textContent = "Cards: ** " + dSecondCard;
         dImg.innerHTML = `<img src="${image[0]}">
         <img src="${image[dSecondCard]}">`;
         document.getElementById("d-sum").textContent = "Sum: " + dSecondCard;
@@ -49,7 +43,6 @@ function startGame() {
     }
     else if (sum === 21) {
         message = "Wohoo ! You've got blackJack. You Won !!!"
-        document.getElementById("d-cards").textContent = "Cards: " + dFirstCard + " " + dSecondCard;
         dImg.innerHTML = `<img src="${image[dFirstCard]}">
         <img src="${image[dSecondCard]}">`;
         document.getElementById("d-sum").textContent = "Sum: " + dSum;
@@ -61,10 +54,9 @@ function startGame() {
     }
     else {
         message = 'You are out of the game! Dealer Won !!!'
-        document.getElementById("d-cards").textContent = "Cards: ** " + dSecondCard;
         dImg.innerHTML = `<img src="${image[dFirstCard]}">
         <img src="${image[dSecondCard]}">`;
-        document.getElementById("d-sum").textContent = "Sum: " + dSecondCard;
+        document.getElementById("d-sum").textContent = "Sum: " + dSum;
         isAlive = false;
         start.classList.remove("inactive");
         add.classList.add("inactive");
@@ -77,12 +69,10 @@ function addCard() {
     let thirdCard = randomNum(1, 11);
     // let thirdCard = 10;
     sum += thirdCard;
-    document.getElementById("c-cards").textContent += " " + thirdCard;
     cImg.innerHTML += `<img src="${image[thirdCard]}">`;
     document.getElementById("c-sum").textContent = "Sum: " + sum;
     if (sum <= 20) {
         message = 'want more?'
-        document.getElementById("d-cards").textContent = "Cards: ** " + dSecondCard;
         dImg.innerHTML = `<img src="${image[0]}">
         <img src="${image[dSecondCard]}">`;
         document.getElementById("d-sum").textContent = "Sum: " + dSecondCard;
@@ -92,7 +82,6 @@ function addCard() {
     }
     else if (sum === 21) {
         message = "Wohoo ! You've got blackJack. You Won !!!"
-        document.getElementById("d-cards").textContent = "Cards: " + dFirstCard + " " + dSecondCard;
         dImg.innerHTML = `<img src="${image[dFirstCard]}">
         <img src="${image[dSecondCard]}">`;
         document.getElementById("d-sum").textContent = "Sum: " + dSum;
@@ -104,10 +93,9 @@ function addCard() {
     }
     else {
         message = 'You are out of the game! Dealer Won !!!'
-        document.getElementById("d-cards").textContent = "Cards: ** " + dSecondCard;
         dImg.innerHTML = `<img src="${image[dFirstCard]}">
         <img src="${image[dSecondCard]}">`;
-        document.getElementById("d-sum").textContent = "Sum: " + dSecondCard;
+        document.getElementById("d-sum").textContent = "Sum: " + dSum;
         isAlive = false;
         start.classList.remove("inactive");
         add.classList.add("inactive");
@@ -117,7 +105,6 @@ function addCard() {
 }
 
 function holdCard() {
-    document.getElementById("d-cards").textContent = "Cards: " + dFirstCard + " " + dSecondCard;
     dImg.innerHTML = `<img src="${image[dFirstCard]}">
     <img src="${image[dSecondCard]}">`;
     document.getElementById("d-sum").textContent = "Sum: " + dSum;
@@ -125,7 +112,6 @@ function holdCard() {
         let thirdCard = randomNum(1, 11);
         // let thirdCard = 9;
         dSum += thirdCard;
-        document.getElementById('d-cards').textContent += " " + thirdCard;
         dImg.innerHTML += `<img src="${image[thirdCard]}">`;
         document.getElementById("d-sum").textContent = "Sum: " + dSum;
     }
