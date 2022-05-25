@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+body{
+    font-size: 20px ;
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1561016444-14f747499547?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdyZWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500")
+}
+
+h1,
+h2{
+    color: goldenrod;
+}
+p{
+    margin: 20px;
+}
+.container{
+    /* height: 70vh; */
+    margin: 0;
+}
+.game-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container,
+.customer,
+.dealer{
+    border: 1px solid goldenrod;
+}
+.customer{
+    width: 94%;
+    margin:10px 3%;
+    padding: 5px;
+    text-align: start;
+    box-sizing: border-box;
+}
+.dealer{
+    width: 94%;
+    margin:10px 3%;
+    padding: 5px;
+    text-align: start;
+    box-sizing: border-box;
+}
+button{
+    height: 35px;
+    width: 140px;
+    padding: 5px;
+    background-color: goldenrod;
+    border: 1px solid gold;
+    color: #016f32;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.inactive{
+    position: absolute;
+    left: -1000px;
+}
+img{
+    width: 70px;
+    margin: 0 5px;
+}
+.card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
